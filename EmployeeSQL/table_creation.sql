@@ -36,19 +36,16 @@ CREATE TABLE dept_emp (
 );
 
 CREATE TABLE dept_manager (
-	manager_ID SERIAL PRIMARY KEY,
 	dept_no VARCHAR(4) NOT NULL,
 	emp_no INTEGER NOT NULL,
+	PRIMARY KEY (dept_no, emp_no),
 	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
 
 CREATE TABLE salaries (
-	salary_ID SERIAL PRIMARY KEY,
 	emp_no INTEGER NOT NULL,
 	salary INTEGER NOT NULL,
+	PRIMARY KEY (emp_no, salary),
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
-
-SELECT * 
-FROM dept_manager

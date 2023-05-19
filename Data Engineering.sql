@@ -49,6 +49,3 @@ CREATE TABLE salaries (
 	PRIMARY KEY (emp_no, salary),
 	FOREIGN KEY (emp_no) REFERENCES employees(emp_no)
 );
-
-SELECT * 
-FROM salaries;
